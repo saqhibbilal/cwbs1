@@ -1,8 +1,19 @@
+
+"use client";
 import Link from "next/link"
+import { useState } from "react"
+import { TermsModal, PrivacyModal, TrademarkModal, ModernSlaveryModal, CookiesModal } from "@/components/legal-modals"
 
 export function Footer() {
+  const [termsOpen, setTermsOpen] = useState(false)
+  const [privacyOpen, setPrivacyOpen] = useState(false)
+  const [trademarkOpen, setTrademarkOpen] = useState(false)
+  const [modernSlaveryOpen, setModernSlaveryOpen] = useState(false)
+  const [cookiesOpen, setCookiesOpen] = useState(false)
+
   return (
-    <footer className="bg-[#1C2841] border-t border-[#1C2841] mt-20">
+    <>
+      <footer className="bg-[#1C2841] border-t border-[#1C2841] mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -101,29 +112,49 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Legal</h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link href="/terms" className="text-white/70 hover:text-white transition-colors">
+                <button
+                  type="button"
+                  className="text-white/70 hover:text-white transition-colors w-full text-left"
+                  onClick={() => setTermsOpen(true)}
+                >
                   Terms and Conditions
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/privacy" className="text-white/70 hover:text-white transition-colors">
+                <button
+                  type="button"
+                  className="text-white/70 hover:text-white transition-colors w-full text-left"
+                  onClick={() => setPrivacyOpen(true)}
+                >
                   Privacy Policy
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/trademark" className="text-white/70 hover:text-white transition-colors">
+                <button
+                  type="button"
+                  className="text-white/70 hover:text-white transition-colors w-full text-left"
+                  onClick={() => setTrademarkOpen(true)}
+                >
                   Trademark
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/modern-slavery" className="text-white/70 hover:text-white transition-colors">
+                <button
+                  type="button"
+                  className="text-white/70 hover:text-white transition-colors w-full text-left"
+                  onClick={() => setModernSlaveryOpen(true)}
+                >
                   Modern Slavery Statement
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/cookies" className="text-white/70 hover:text-white transition-colors">
+                <button
+                  type="button"
+                  className="text-white/70 hover:text-white transition-colors w-full text-left"
+                  onClick={() => setCookiesOpen(true)}
+                >
                   Cookies
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -134,5 +165,11 @@ export function Footer() {
         </div>
       </div>
     </footer>
+      <TermsModal open={termsOpen} onOpenChange={setTermsOpen} />
+      <PrivacyModal open={privacyOpen} onOpenChange={setPrivacyOpen} />
+      <TrademarkModal open={trademarkOpen} onOpenChange={setTrademarkOpen} />
+      <ModernSlaveryModal open={modernSlaveryOpen} onOpenChange={setModernSlaveryOpen} />
+      <CookiesModal open={cookiesOpen} onOpenChange={setCookiesOpen} />
+    </>
   )
 }
