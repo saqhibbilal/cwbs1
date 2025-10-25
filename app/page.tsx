@@ -47,22 +47,19 @@ const keyServices = [
 
 const featuredCourses = [
   {
-    title: "Oracle Fusion",
-    description: "Master Oracle Fusion ERP implementation and optimization",
-    duration: "5 Days",
-    price: "$1,500",
+    title: "Oracle ERP Cloud Financials",
+    description: "Master Oracle ERP Cloud Financials implementation and optimization",
+    duration: "3 Months",
   },
   {
-    title: "Digital Marketing",
-    description: "Advanced strategies for modern marketing success",
-    duration: "3 Days",
-    price: "$900",
+    title: "Oracle SCM Cloud",
+    description: "Advanced strategies for modern supply chain management",
+    duration: "3 Months",
   },
   {
-    title: "HCM Training",
-    description: "Human Capital Management for HR professionals",
-    duration: "4 Days",
-    price: "$1,200",
+    title: "AI for Business Operations ",
+    description: "Learn how to apply AI, automation, and GenAI tools to streamline business operations and improve decision-making.",
+    duration: "2 Months",
   },
 ]
 
