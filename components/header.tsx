@@ -88,12 +88,15 @@ export function Header() {
               Courses
             </Link>
 
+            {/*
+            Workshops nav item (commented out per client request). To re-enable, remove the surrounding comment markers.
             <Link
               href="/workshops"
               className="text-white hover:text-white/80 transition-colors font-medium text-sm lg:text-base"
             >
               Workshops
             </Link>
+            */}
             </nav>
           </div>
 
