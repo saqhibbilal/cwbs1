@@ -47,22 +47,19 @@ const keyServices = [
 
 const featuredCourses = [
   {
-    title: "Oracle Fusion",
-    description: "Master Oracle Fusion ERP implementation and optimization",
-    duration: "5 Days",
-    price: "$1,500",
+    title: "Oracle ERP Cloud Financials",
+    description: "Master Oracle ERP Cloud Financials implementation and optimization",
+    duration: "3 Months",
   },
   {
-    title: "Digital Marketing",
-    description: "Advanced strategies for modern marketing success",
-    duration: "3 Days",
-    price: "$900",
+    title: "Oracle SCM Cloud",
+    description: "Advanced strategies for modern supply chain management",
+    duration: "3 Months",
   },
   {
-    title: "HCM Training",
-    description: "Human Capital Management for HR professionals",
-    duration: "4 Days",
-    price: "$1,200",
+    title: "AI for Business Operations ",
+    description: "Learn how to apply AI, automation, and GenAI tools to streamline business operations and improve decision-making.",
+    duration: "2 Months",
   },
 ]
 
@@ -240,41 +237,45 @@ export default function Home() {
           </div>
 
           {/* Learning Tabs */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {/* Courses Column */}
             <div className="space-y-6">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2 rounded-lg bg-[#1C2841]/10">
-                  <svg className="w-6 h-6 text-[#1C2841]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-                  </svg>
+                <div className="flex flex-col items-center space-y-3 mb-6">
+                  <div className="p-2 rounded-lg bg-[#1C2841]/10">
+                    <svg className="w-6 h-6 text-[#1C2841]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground text-center">Professional Courses</h3>
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Professional Courses</h3>
-              </div>
-              
-              {featuredCourses.map((course, index) => (
-                <div
-                  key={course.title}
-                  className="group relative overflow-hidden rounded-lg border border-[#1C2841]/20 hover:border-[#1C2841] transition-all duration-500 hover:shadow-lg hover:-translate-y-1"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1C2841]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative p-6">
-                    <h4 className="text-lg font-bold text-foreground group-hover:text-[#1C2841] transition-colors duration-300 mb-3">
-                      {course.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                      {course.description}
-                    </p>
-                    <div className="text-xs text-muted-foreground">
-                      Duration: {course.duration}
+              {/* Center the course cards in a constrained container so they don't stretch too wide */}
+              <div className="space-y-6 max-w-3xl mx-auto w-full">
+                {featuredCourses.map((course, index) => (
+                  <div
+                    key={course.title}
+                    className="group relative overflow-hidden rounded-lg border border-[#1C2841]/20 hover:border-[#1C2841] transition-all duration-500 hover:shadow-lg hover:-translate-y-1 w-full"
+                    style={{ animationDelay: `${index * 150}ms` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#1C2841]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative p-6">
+                      <h4 className="text-lg font-bold text-foreground group-hover:text-[#1C2841] transition-colors duration-300 mb-3">
+                        {course.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                        {course.description}
+                      </p>
+                      <div className="text-xs text-muted-foreground">
+                        Duration: {course.duration}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* Workshops Column */}
+            {/*
+            Workshops Column (commented out per client request). To re-enable, remove the surrounding comment markers.
+
             <div className="space-y-6">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-2 rounded-lg bg-[#1C2841]/10">
@@ -306,6 +307,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            */}
           </div>
 
           {/* CTA */}
@@ -316,11 +318,14 @@ export default function Home() {
                   Browse All Courses
                 </Button>
               </Link>
+              {/*
+              View Workshops CTA (commented out per client request). To re-enable, remove the comment markers.
               <Link href="/workshops">
                 <Button variant="outline" className="border-[#1C2841] text-[#1C2841] hover:bg-[#1C2841] hover:text-white px-6 py-3 font-semibold hover:scale-105 transition-all duration-300">
                   View Workshops
-                    </Button>
-                  </Link>
+                </Button>
+              </Link>
+              */}
             </div>
           </div>
         </div>
